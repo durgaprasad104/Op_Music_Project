@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "installCommand": "npm install",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/search",          "destination": "/api/search" },
+    { "source": "/api/recommendations", "destination": "/api/recommendations" },
+    { "source": "/api/video",           "destination": "/api/video" },
+    { "source": "/(.*)",                "destination": "/index.html" }
+  ]
+}
