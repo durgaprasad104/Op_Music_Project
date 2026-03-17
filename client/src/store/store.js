@@ -61,7 +61,8 @@ export const usePlayerStore = create(
           try {
             const current = queue[queueIndex]
             const params = `videoId=${current.videoId}&q=${encodeURIComponent(current.title)}`
-            const res = await fetch(`/api/recommendations?${params}`)
+            const API_BASE = import.meta.env.VITE_API_BASE || '';
+            const res = await fetch(`${API_BASE}/api/recommendations?${params}`)
             const data = await res.json()
             
             if (data.results && data.results.length > 0) {
