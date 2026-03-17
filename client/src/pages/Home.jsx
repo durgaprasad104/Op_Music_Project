@@ -24,7 +24,8 @@ export default function Home() {
       try {
         const recent = recentlyPlayed[0]
         const params = recent ? `videoId=${recent.videoId}&q=${encodeURIComponent(recent.title)}` : ''
-        const res = await fetch(`/api/recommendations?${params}`)
+        const API_BASE = import.meta.env.VITE_API_BASE || '';
+        const res = await fetch(`${API_BASE}/api/recommendations?${params}`)
         const data = await res.json()
         setRecommendations(data.results || [])
       } catch { /* silent */ }
