@@ -5,9 +5,6 @@
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "vite",
   "rewrites": [
-    { "source": "/api/search",          "destination": "/api/search" },
-    { "source": "/api/recommendations", "destination": "/api/recommendations" },
-    { "source": "/api/video",           "destination": "/api/video" },
-    { "source": "/(.*)",                "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
