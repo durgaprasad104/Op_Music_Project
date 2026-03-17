@@ -30,7 +30,8 @@ export default function Search() {
     try {
       const params = new URLSearchParams({ q, maxResults: 12 })
       if (pageToken) params.set('pageToken', pageToken)
-      const res = await fetch(`/api/search?${params}`)
+      const API_BASE = import.meta.env.VITE_API_BASE || '';
+      const res = await fetch(`${API_BASE}/api/search?${params}`)
       const data = await res.json()
       if (data.error) throw new Error(data.error)
       setResults(prev => append ? [...prev, ...(data.results || [])] : (data.results || []))
