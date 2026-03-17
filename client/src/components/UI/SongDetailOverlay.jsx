@@ -35,7 +35,8 @@ export default function SongDetailOverlay() {
       setLoadingRecs(true)
       try {
         const params = `videoId=${detailTrack.videoId}&q=${encodeURIComponent(detailTrack.title)}`
-        const res = await fetch(`/api/recommendations?${params}`)
+        const API_BASE = import.meta.env.VITE_API_BASE || '';
+        const res = await fetch(`${API_BASE}/api/recommendations?${params}`)
         const data = await res.json()
         if (mounted) setRecommendations(data.results || [])
       } catch (err) {
