@@ -6,6 +6,6 @@
     "axios": "^1.7.9"
   },
   "scripts": {
-    "build": "cd client && npm install --legacy-peer-deps && npm run build"
+    "build": "rm -rf dist && cd client && npm install --legacy-peer-deps && npm run build && cd .. && cp -r client/dist dist"
   }
 }
