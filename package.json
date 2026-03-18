@@ -1,17 +1,10 @@
 {
   "name": "op-music-pree",
   "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "node": ">=20"
-  },
-  "workspaces": [
-    "client"
-  ],
   "dependencies": {
     "axios": "^1.7.9"
   },
   "scripts": {
-    "build": "npm run build --workspace=client"
+    "build": "cd client && npm run build"
   }
 }
