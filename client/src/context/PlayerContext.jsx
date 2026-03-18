@@ -135,6 +135,7 @@ export function PlayerProvider({ children }) {
                   'allow',
                   'autoplay; encrypted-media; fullscreen; picture-in-picture'
                 )
+                iframe.removeAttribute('allowfullscreen')
               }
             } catch (_) {}
 
