@@ -1,11 +1,14 @@
 {
   "name": "op-music-pree",
   "version": "1.0.0",
-  "description": "OP Music Pree — API dependencies for Vercel serverless functions",
+  "private": true,
+  "workspaces": [
+    "client"
+  ],
   "dependencies": {
     "axios": "^1.7.9"
   },
   "scripts": {
-    "build": "cd client && npm install --legacy-peer-deps && npm run build && cd .. && rm -rf dist && mv client/dist dist"
+    "build": "npm run build -w client"
   }
 }
