@@ -1,9 +1,7 @@
 {
   "version": 2,
-  "nodeVersion": "20.x",
-  "outputDirectory": "client/dist",
+  "framework": "vite",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
